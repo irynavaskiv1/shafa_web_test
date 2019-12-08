@@ -1,3 +1,4 @@
 # work_with_shafa_website
 
-python -m pytest tests.tests_main_page.ShafaMainPageTestCase.test_mobile_menu_all_elements
+  1)Run test
+    pytest -svx
