@@ -1,5 +1,4 @@
 from base_pytest import Base
-import time
 
 
 class TestID008(Base):
@@ -11,6 +10,13 @@ class TestID008(Base):
         assert all == 1
 
     def test_numbers_of_cities(self):
-        city_index = self.selenium.find_element_by_class_name('b-index-about__cities')
+        city_index = self.selenium.find_element_by_class_name(
+            'b-index-about__cities')
         numbers_of_city = city_index.find_elements_by_tag_name('li')
         assert len(numbers_of_city) == 20
+
+    def test_numbers_of_brands(self):
+        brand_index = self.selenium.find_element_by_class_name(
+            'b-brands')
+        numbers_of_brands = brand_index.find_elements_by_tag_name('li')
+        assert len(numbers_of_brands) == 18
