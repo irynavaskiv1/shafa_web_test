@@ -1,4 +1,5 @@
 from base_pytest import Base
+import time
 
 
 class TestID008(Base):
@@ -8,3 +9,8 @@ class TestID008(Base):
             '/html/body/div/div[3]/div[1]/footer/div/div/div/div/ul[3]')
         all = len(all_social_network)
         assert all == 1
+
+    def test_numbers_of_cities(self):
+        city_index = self.selenium.find_element_by_class_name('b-index-about__cities')
+        numbers_of_city = city_index.find_elements_by_tag_name('li')
+        assert len(numbers_of_city) == 20
