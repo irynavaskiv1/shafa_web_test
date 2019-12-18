@@ -20,3 +20,18 @@ class TestID008(Base):
             'b-brands')
         numbers_of_brands = brand_index.find_elements_by_tag_name('li')
         assert len(numbers_of_brands) == 18
+
+
+class TestID0081(Base):
+
+    def test_outerwear(self):
+        test_outerwear = self.selenium.find_element_by_class_name(
+            'b-index-categories__list')
+        numbers_test_outerwear = test_outerwear.find_elements_by_tag_name('li')
+        assert len(numbers_test_outerwear) == 9
+
+    def test_skirt(self):
+        test_skirt = self.selenium.find_element_by_class_name(
+            'b-index-categories__list')
+        numbers_test_skirt = test_skirt.find_elements_by_tag_name('li')
+        assert len(numbers_test_skirt) == 9
