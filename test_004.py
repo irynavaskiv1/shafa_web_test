@@ -3,6 +3,20 @@ from base_pytest import Base
 
 
 class TestID004(Base):
+    """
+        TestCase: 004
+        Author: Iryna Vaskiv
+        Description: Check if search button work.
+        Pre-condition: Login inside mobile interface.
+        Steps to reproduce:
+            1. Login into Shafa.ua
+            2. Find search button
+            3. Click on search button and enter "Пальто" word
+            4. Next page should have "Пальто" word
+        Expected result: The word which user enret in first page, should be in
+        second.
+    """
+
     def test_search_function(self):
         input_text_should_be = 'Пальто'
         self.selenium.find_element_by_xpath(

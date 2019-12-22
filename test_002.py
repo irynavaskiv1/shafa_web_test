@@ -7,13 +7,13 @@ class TestID002(Base):
         TestCase: 002
         Author: Iryna Vaskiv
         Description: Check if in navigation list exist 6 elements.
-        Pre-condition: Login inside web interface
+        Pre-condition: Login inside web interface.
         Steps to reproduce:
             1. Login into Shafa.ua
             2. Find navigation list
-            3. Check child elements inside list.
+            3. Check child elements inside list
         Expected result: Should be 6 elements. If not skip test.
-        """
+    """
 
     def test_navigation_list_all_elements(self):
         navigation_list_elements = self.selenium.find_elements_by_xpath(

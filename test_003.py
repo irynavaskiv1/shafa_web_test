@@ -3,6 +3,17 @@ from base_pytest import Base
 
 
 class TestID003(Base):
+    """
+       TestCase: 003
+       Author: Iryna Vaskiv
+       Description: Check if in "Woman" block have 4 sections.
+       Pre-condition: Login inside web interface.
+       Steps to reproduce:
+           1. Login into Shafa.ua
+           2. Find 'woman' button and click
+           3. Check child elements
+       Expected result: Should be 4 elements. If not skip test.
+    """
 
     def test_navigation_list_all_elements(self):
         self.selenium.find_element_by_xpath(
@@ -15,5 +26,4 @@ class TestID003(Base):
             find_elements_by_class_name('b-sub-nav__section')
         if len(child_elements) != 4:
             pytest.skip(msg='Page do not have all elements')
-
         assert len(child_elements) == 4
