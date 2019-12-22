@@ -7,11 +7,12 @@ class TestID001(Base):
     TestCase: 001
     Author: Iryna Vaskiv
     Description: Check if login page have the main element.
+    Pre-condition: Login inside mobile interface
     Steps to reproduce:
-        1. Login into Shafa.ua (inside mobile interface)
+        1. Login into Shafa.ua
         2. Find login button
         3. Click on "login button"
-    Expected result: Should be one element. If not skip test.
+    Expected result: Should be 1 element. If not skip test.
     """
 
     def test_mobile_menu_all_elements(self):
