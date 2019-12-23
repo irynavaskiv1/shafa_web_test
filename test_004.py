@@ -13,7 +13,7 @@ class TestID004(Base):
             2. Find search button
             3. Click on search button and enter "Пальто" word
             4. Next page should have "Пальто" word
-        Expected result: The word which user enret in first page, should be in
+        Expected result: The word which user entered in first page, should be in
         second.
     """
 
