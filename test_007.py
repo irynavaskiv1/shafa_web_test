@@ -2,6 +2,18 @@ from base_pytest import Base
 
 
 class TestID007(Base):
+    """
+        TestCase: 007 (1, 2)
+        Author: Iryna Vaskiv
+        Description: Check if main page have Android and iOS buttons. And user
+        can press this buttons and get right result.
+        Pre-condition: Login inside web interface.
+        Steps to reproduce:
+            1. Login into Shafa.ua
+            2. Find Android and iOS buttons
+            3. Click this buttons
+        Expected result: Should be able to get App Store / Play Market pages.
+    """
 
     def test_android_play_market(self):
         self.selenium.find_element_by_xpath(
