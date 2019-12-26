@@ -1,23 +1,18 @@
 from base_pytest import Base
 
 
-class TestID009(Base):
+class TestID0010(Base):
     """
-        TestCase: 008(first 1, 2)
+        TestCase: 0010
         Author: Iryna Vaskiv
-        Description:
-            1. Check if page have social network field.
-            2. Check if page have all numbers of cities.
-            3. Check if page have all numbers of brand.
+        Description: Check if "NEW" label exist in page.
         Pre-condition: Login inside web interface.
         Steps to reproduce:
             1. Login into Shafa.ua
-            2. Find correct box of button/buttons
-            3. Check child elements inside box
+            2. Find correct xpath to label
         Expected result:
                 1. Should be 1 element.
-                2. Should be 20 elements.
-                3. Should b 18 elements.
+                
     """
 
     def test_if_exist_new_label(self):
