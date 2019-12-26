@@ -3,7 +3,7 @@ from base_pytest import Base
 
 class TestID008(Base):
     """
-        TestCase: 008(first)
+        TestCase: 008(first 1, 2)
         Author: Iryna Vaskiv
         Description:
             1. Check if page have social network field.
@@ -41,7 +41,7 @@ class TestID008(Base):
 
 class TestID0081(Base):
     """
-        TestCase: 008(second)
+        TestCase: 008(second 1, 2)
         Author: Iryna Vaskiv
         Description:
             1. Check if outerwear block has all elements.
