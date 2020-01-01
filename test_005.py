@@ -3,6 +3,22 @@ from base_pytest import Base
 
 
 class TestID005(Base):
+    """
+        TestCase: 005
+        Author: Iryna Vaskiv
+        Description:
+            Check if user can create post with new product.
+        Pre-condition: Login inside web/mobile interface.
+        Steps to reproduce:
+            1. Login into Shafa.ua
+            2. Find box "Добавить товар" button and click it.
+            3. Download min 1 photo
+            4. Enter data into required fields
+            5. Press "Я добавила ..." button.
+            6. Press "Добавить вещь" button.
+        Expected result:
+            1. New ware should be in Shafa.ua blog.
+        """
 
     def test_add_new_ware(self):
         login_button = self.selenium.find_element_by_xpath(
