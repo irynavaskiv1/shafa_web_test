@@ -30,8 +30,18 @@ class TestID006(Base):
         password_field = self.selenium.find_element_by_xpath(
             '/html/body/div[1]/div/div/div/div/div/div[2]/form/div[2]/input')
         password_field.send_keys('qqqqqq1!')
+
+        i_am_not_a_robot_button = self.selenium.find_element_by_xpath(
+            '/html/body/div[1]/div/div/div/div/div/div[2]/form/button').click()
         sleep(5)
 
-        self.selenium.find_element_by_xpath(
-            '/html/body/div[1]/div/div/div/div/div/div[2]/form/button')\
-            .click()
+        login_inside_login_button = self.selenium.find_element_by_xpath(
+            '/html/body/div[1]/div/div/div/div/div/div[2]/form/button').click()
+        sleep(5)
+
+        profile_image = self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[1]/div/div[1]/header/'
+            'div[2]/div/div/img')
+        len_profile_image = len(profile_image)
+
+        assert len_profile_image == 1
