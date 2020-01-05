@@ -23,7 +23,7 @@ class TestID0014(Base):
     """
 
     def test_brands_site(self):
-        self.all_women_close_button().click()
+        self.women_button().click()
         self.all_brands().click()
         sleep(5)
         brands_header = self.selenium.find_element_by_xpath(
@@ -33,7 +33,7 @@ class TestID0014(Base):
         assert set_words == set_get_brands_header
 
     def test_all_brands(self):
-        self.all_women_close_button().click()
+        self.women_button().click()
         self.all_brands().click()
         sleep(5)
         container_brands = self.selenium.find_element_by_xpath(

@@ -9,7 +9,7 @@ class Base:
         self.selenium = webdriver.Firefox()
         self.selenium.get('{}'.format('https://shafa.ua/'))
 
-    def all_women_close_button(self):
+    def women_button(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]'
             '/nav/div/ul/li[1]/a')
