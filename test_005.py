@@ -1,6 +1,8 @@
 from time import sleep
 from base_pytest import Base
 
+import pytest
+
 
 class TestID005(Base):
     """
@@ -19,7 +21,7 @@ class TestID005(Base):
         Expected result:
             1. New ware should be in Shafa.ua blog.
         """
-
+    @pytest.skip
     def test_add_new_ware(self):
         login_button = self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/header/div[2]/div/a[1]')
