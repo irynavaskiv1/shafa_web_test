@@ -10,16 +10,16 @@ class TestID0015(Base):
         Author: Iryna Vaskiv
         Description:
             1. Check if user can see all brands into Shafa.ua site. Should use
-             'Все бренды' button inside 'Женщинам' block
-            2. Check if brands have all elements(16)
+             'Вся женская одежда' button inside 'Женщинам' block
+            2. Check if brands have all elements(21)
         Pre-condition: Login inside web interface.
         Steps to reproduce:
             1. Click in 'Женщинам' button
-            2. Click in 'Все бренды' button
+            2. Click in 'Вся женская одежда' button
             3. Check the header inside page
         Expected result:
-            1. Should be 'Брендовая женская одежда' header.
-            2. Should be 16 elements
+            1. Should be 'Женская одежда' header.
+            2. Should be 21 elements.
     """
 
     def test_all_women_site(self):
