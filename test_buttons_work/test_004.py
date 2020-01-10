@@ -1,5 +1,5 @@
 from time import sleep
-from base_pytest import Base
+from sf_setup_helper.base_pytest import Base
 
 
 class TestID004(Base):

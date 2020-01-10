@@ -1,9 +1,10 @@
 from time import sleep
-from base_pytest import Base
+from sf_setup_helper.base_pytest import Base
 
 import pytest
 
 
+@pytest.mark.webtest
 class TestID0015(Base):
     """
         TestCase: 0014(1, 2)
@@ -23,7 +24,7 @@ class TestID0015(Base):
     """
 
     def test_all_women_site(self):
-        self.women_button().click()
+        self.for_women_button().click()
         self.all_woman_close().click()
         sleep(5)
         all_women_header = self.selenium.find_element_by_xpath(
@@ -33,7 +34,7 @@ class TestID0015(Base):
         assert set_words == set_get_brands_header
 
     def test_all_women_elements(self):
-        self.women_button().click()
+        self.for_women_button().click()
         self.all_woman_close().click()
         sleep(5)
         container_brands = self.selenium.find_element_by_xpath(

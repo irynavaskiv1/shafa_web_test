@@ -2,7 +2,7 @@ from time import sleep
 
 import pytest
 
-from base_pytest import Base
+from sf_setup_helper.base_pytest import Base
 
 
 class TestID006(Base):
