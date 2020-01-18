@@ -40,6 +40,11 @@ class Base:
             '/html/body/div/div[2]/div[1]/div/div[1]'
             '/nav/div/ul/li[1]/div/div[2]/div[3]/ul/li/a')
 
+    def all_cosmetics(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[1]/div/div[1]'
+            '/nav/div/ul/li[1]/div/div[2]/div[4]/ul/li/a')
+
     def novelty(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[2]/a')
