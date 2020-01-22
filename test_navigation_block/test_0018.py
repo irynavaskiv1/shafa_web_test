@@ -1,4 +1,5 @@
 from time import sleep
+import re
 
 import pytest
 
@@ -40,3 +41,14 @@ class TestID0018(Base):
         if len(child_elements) != 20:
             pytest.skip(msg='Page do not have all elements')
         assert len(child_elements) == 20
+
+    def test_if_numbers_in_item_exist(self):
+        self.novelty().click()
+        item_all = self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/div/div/div/div[3]/ul/li[3]/div')
+        item_text_number = re.findall('(\d+)', item_all.text)
+        item_part = self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/div/div/div/div[3]/ul/li[3]/div/'
+            'div[2]')
+        numbers = re.findall('(\d+)', item_part.text)
+        assert int(item_text_number[0]) == int(numbers[0])
