@@ -49,6 +49,11 @@ class Base:
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[2]/a')
 
+    def sorting_block(self):
+        return self.selenium.find_element_by_xpath(
+        '/html/body/div[1]/div[2]/div[2]/div/div/div/div/'
+        'div[4]/div[2]/span/select')
+
     def for_kids(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[3]/a')
