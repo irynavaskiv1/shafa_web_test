@@ -18,7 +18,8 @@ class TestID0019(Base):
             2. Check the header inside page
         Expected result:
             1. 'Новинки' should have filter block with brands items
-            2. Sorting block should have all items
+            2. Sorting block should have name of all items
+            3. Sorting block should have all items
     """
 
     def test_if_brands_items_exist(self):
@@ -41,3 +42,13 @@ class TestID0019(Base):
         set_words = {'по дате добавления', 'по популярности',
                      'от дорогих к дешевым', 'от дешевых к дорогим'}
         assert set_words == set_get_size_block_words
+
+    def test_if_sorting_block_have_all_elements(self):
+        self.novelty().click()
+        size_block = self.selenium.find_element_by_xpath(
+            '/html/body/div[1]/div[2]/div[2]/div/div/div'
+            '/div/div[4]/div[2]/span')
+        set_get_size_block_words = set(size_block.text.split('\n'))
+        set_words = {'по дате добавления', 'по популярности',
+                     'от дорогих к дешевым', 'от дешевых к дорогим'}
+        assert len(set_words) == len(set_get_size_block_words)
