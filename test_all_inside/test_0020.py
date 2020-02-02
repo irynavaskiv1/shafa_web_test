@@ -1,5 +1,3 @@
-from time import sleep
-
 import pytest
 
 from sf_setup_helper.base_pytest import Base
@@ -36,9 +34,20 @@ class TestID0019(Base):
     def test_if_second_main_inner_exist(self):
         self.for_home().click()
         self.all_home_textiles().click()
-        sleep(3)
         all_item = self.selenium.find_element_by_xpath(
             '/html/body/div[1]/div[2]/div[2]/div/aside/div[1]/div')
         set_all_words = set(all_item.text.split('\n'))
         set_all_text = {'Посуда', 'Хранение вещей', 'Декор'}
+        assert set_all_words == set_all_text
+
+    def test_if_gradation_of_price_exist(self):
+        self.for_home().click()
+        self.all_home_textiles().click()
+        all_city_words = self.selenium.find_element_by_xpath(
+            '/html/body/div[1]/div[2]/div[2]/div/aside/div[2]'
+            '/div[2]/div/div[1]')
+        set_all_words = set(all_city_words.text.split('\n'))
+        set_all_text = {'От 300 до 500 грн', 'Более 1000 грн', 'До 100 грн',
+                        'От 100 до 300 грн', 'От', 'Цена',  'До',
+                        'От 500 до 1000 грн'}
         assert set_all_words == set_all_text
