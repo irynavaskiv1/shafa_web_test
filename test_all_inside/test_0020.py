@@ -4,7 +4,7 @@ from sf_setup_helper.base_pytest import Base
 
 
 @pytest.mark.webtest
-class TestID0019(Base):
+class TestID0020(Base):
     """
         @TestCase: 0020 (1, 2, 3 )
         @Author: Iryna Vaskiv
