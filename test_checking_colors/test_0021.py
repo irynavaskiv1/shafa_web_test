@@ -8,7 +8,25 @@ from sf_setup_helper.base_pytest import Base
 
 
 @pytest.mark.webtest
-class TestID0019(Base):
+class TestID0021(Base):
+    """
+        @TestCase: 0021 (1, 2, 3 )
+        @Author: Iryna Vaskiv
+        Description:
+            1. Check if user can see all items of color into Shafa.ua site.
+             Should use 'Для дома' button.
+            2. Check if first color (white) is actual white
+            3. Check if all colors are correct.
+        Pre-condition: Login inside web interface.
+        Steps to reproduce:
+            1. Click in 'Для дома' button
+            2. Check the section container inside page
+            3. Check the all items inside 'Цвет' block
+        Expected result:
+            1. 'Для дома' should have section container block
+            2. Container block should have white color
+            3. Container block should have all correct colors
+    """
 
     def test_len_color(self):
         self.for_home().click()
