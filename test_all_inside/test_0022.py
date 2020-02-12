@@ -6,7 +6,22 @@ from sf_setup_helper.base_pytest import Base
 
 @pytest.mark.webtest
 class TestID0022(Base):
-    
+    """
+       @TestCase: 0022 (1)
+       @Author: Iryna Vaskiv
+       Description:
+           1. Check if price block work correct. When user select price
+           'from' and 'to' should select correct price.
+       Pre-condition: Login inside web / mobile interface.
+       Steps to reproduce:
+           1. Click in 'Скидка дня' button
+           2. Check the section containers inside page
+           3. Check the all items inside 'Цена' container
+       Expected result:
+           1. For ex: should use price from 100 to 200 and check if all
+           price in page are filter correct.
+       """
+
     def test_cost_from_labels(self):
         self.discount_day().click()
         self.selenium.find_element_by_id('cost-from').send_keys('100')
