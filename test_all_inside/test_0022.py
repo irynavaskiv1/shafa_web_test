@@ -1,3 +1,4 @@
+import random
 import re
 import pytest
 from time import sleep
@@ -25,9 +26,11 @@ class TestID0022(Base):
 
     def test_cost_from_labels(self):
         self.discount_day().click()
-        self.selenium.find_element_by_id('cost-from').send_keys('100')
+        min_value = random.randint(100, 200)
+        max_value = random.randint(200, 300)
+        self.selenium.find_element_by_id('cost-from').send_keys(min_value)
         sleep(5)
-        self.selenium.find_element_by_id('cost-to').send_keys('200')
+        self.selenium.find_element_by_id('cost-to').send_keys(max_value)
         sleep(5)
         price_block = self.selenium.find_elements_by_xpath(
             '/html/body/div/div[2]/div[2]/div/div/div/'
@@ -35,5 +38,5 @@ class TestID0022(Base):
         text_in_price_block = price_block[0].text
         temp = re.findall(r'\d+', text_in_price_block)
         res = list(map(int, temp))
-        result = 100 <= res[0] <= 200
+        result = min_value <= res[0] <= max_value
         assert result is True
