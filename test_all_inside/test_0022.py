@@ -1,5 +1,6 @@
-from time import sleep
+import re
 import pytest
+from time import sleep
 
 from sf_setup_helper.base_pytest import Base
 
@@ -25,16 +26,14 @@ class TestID0022(Base):
     def test_cost_from_labels(self):
         self.discount_day().click()
         self.selenium.find_element_by_id('cost-from').send_keys('100')
+        sleep(5)
         self.selenium.find_element_by_id('cost-to').send_keys('200')
         sleep(5)
-        main_block = self.selenium.find_elements_by_class_name('b-main__block')
-        price_block = self.selenium.find_elements_by_class_name(
-            'b-tile-item__price')
-        result = []
-        for i in price_block:
-            if price_block >= 100:
-                if price_block <= 200:
-                    result.append(True)
-            else:
-                result.append(False)
-        assert result[0] == True
+        price_block = self.selenium.find_elements_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/div/div/'
+            'div/ul/li[1]/div/div[2]/div[1]/div/span[1]')
+        text_in_price_block = price_block[0].text
+        temp = re.findall(r'\d+', text_in_price_block)
+        res = list(map(int, temp))
+        result = 100 <= res[0] <= 200
+        assert result is True
