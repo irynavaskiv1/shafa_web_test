@@ -8,6 +8,19 @@ from sf_setup_helper.base_pytest import Base
 
 @pytest.mark.webtest
 class TestID0023(Base):
+    """
+        @TestCase: 0023
+        @Author: Iryna Vaskiv
+        Description:
+            1. Check if search is visible
+        Pre-condition: Login inside web/mobile interface.
+        Steps to reproduce:
+            1. Click in 'Search' button
+            2. Enter the value to search block
+            3. Check the value is shows correct
+        Expected result:
+            1. Value in second page is the same
+    """
 
     def test_nav_bar_list_color(self):
         search_input = self.selenium.find_element_by_xpath(
