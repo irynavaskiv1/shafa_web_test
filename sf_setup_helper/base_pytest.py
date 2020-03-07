@@ -130,5 +130,30 @@ class Base:
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[6]/a')
 
+    def price_to_100(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/aside/'
+            'div/div[2]/div[3]/div/div[2]/div/ul/li[1]/label')
+
+    def price_from_100_to_300(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/aside/'
+            'div/div[2]/div[3]/div/div[2]/div/ul/li[2]/label')
+
+    def price_from_300_to_500(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/aside/'
+            'div/div[2]/div[3]/div/div[2]/div/ul/li[3]/label')
+
+    def price_from_500_to_1000(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/aside/'
+            'div/div[2]/div[3]/div/div[2]/div/ul/li[4]/label')
+
+    def price_from_1000(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/aside/'
+            'div/div[2]/div[3]/div/div[2]/div/ul/li[5]/label')
+
     def teardown(self):
         self.selenium.close()
