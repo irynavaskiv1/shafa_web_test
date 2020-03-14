@@ -9,6 +9,7 @@ class Base:
         self.selenium = webdriver.Firefox()
         self.selenium.get('{}'.format('https://shafa.ua/'))
 
+    # all header items
     def login_button(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/header/div[2]/div/a[1]')
@@ -21,6 +22,7 @@ class Base:
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/a')
 
+    # section container for 'Женщинам' button
     def for_women_button(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[1]/a')
@@ -45,6 +47,7 @@ class Base:
             '/html/body/div/div[2]/div[1]/div/div[1]'
             '/nav/div/ul/li[1]/div/div[2]/div[4]/ul/li/a')
 
+    # section container for 'Новинки' button
     def novelty(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[2]/a')
@@ -54,6 +57,7 @@ class Base:
             '/html/body/div[1]/div[2]/div[2]/div/div/div/div/'
             'div[4]/div[2]/span/select')
 
+    # section container for 'Детям' button
     def for_kids(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[3]/a')
@@ -78,6 +82,7 @@ class Base:
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[3]'
             '/div/div[2]/div[3]/ul/li/a')
 
+    # section container for 'Мужчинам' button
     def for_men(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[4]/a')
@@ -97,6 +102,7 @@ class Base:
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[4]'
             '/div/div[2]/div[3]/ul/li/a')
 
+    # section container for 'Для дома' button
     def for_home(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[5]/a')
@@ -126,6 +132,7 @@ class Base:
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[5]'
             '/div/div[2]/div[1]/ul/li[2]/a')
 
+    # section container for 'Скидка дня' button
     def discount_day(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[6]/a')
