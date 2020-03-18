@@ -19,7 +19,7 @@ class TestID006(Base):
             5. Press "Войти" button
         Expected result: Should be able to login into a page.
     """
-    @pytest.skip
+    @pytest.mark.skip
     def test_login(self):
         login_button = self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/header/div[2]/div/a[1]')
