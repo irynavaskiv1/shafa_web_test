@@ -6,12 +6,18 @@ All project break into blocks:
 
 For this I took the https://shafa.ua/ web site.
 
-  1)Run test
-    pytest -svx +path to file
+For install all packages should install requirements file.
+For this should use command pip install -r requirements.txt
 
-  2)Active environment
-    source env/bin/activate
+  1) Run test
+     pytest -svx + path to file
 
-  3)Check tests
-    flake8 test_len_elements/+file name
+  2) Active environment
+     source env/bin/activate
+
+  3) Check tests
+     flake8 test_len_elements/+file name
    
+  4) Run regression 
+     pytest -svx /home/iryna/Documents/work_with_shafa_website/
+                 (path to scope files)
