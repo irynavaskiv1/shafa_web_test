@@ -135,7 +135,11 @@ class Base:
     # section container for 'Скидка дня' button
     def discount_day(self):
         return self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[6]/a')
+            '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[7]/a')
+
+    def combobox_items_block(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/div/div/div/p/span/select')
 
     def price_to_100(self):
         return self.selenium.find_element_by_xpath(
