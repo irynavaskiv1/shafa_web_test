@@ -141,6 +141,27 @@ class Base:
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[2]/div/div/div/div/p/span/select')
 
+    # section container for 'Рубрика' button
+    def women_clothes(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/aside/div/div[2]'
+            '/div[2]/div/div/div/div[1]/div[1]/a')
+
+    def children_clothes(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/aside/div/div[2]'
+            '/div[2]/div/div/div/div[2]/div[1]/a')
+
+    def men_clothes(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/aside/div/div[2]'
+            '/div[2]/div/div/div/div[3]/div[1]/a')
+
+    def for_home_stuff(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/aside/div/div[2]'
+            '/div[2]/div/div/div/div[4]/div[1]/a')
+
     def price_to_100(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[2]/div/aside/'
