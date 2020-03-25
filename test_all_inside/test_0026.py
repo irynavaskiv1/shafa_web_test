@@ -11,6 +11,8 @@ class TestID0026(Base):
         Description:
             1. Check if inside discount block all elements have umber
                of elements
+            2. Check the len items inside main block
+            3. Check children elements inside item
         Pre-condition: Login inside web/mobile interface.
         Steps to reproduce:
             1. Click in 'Discount' button
@@ -41,12 +43,7 @@ class TestID0026(Base):
             '/html/body/div/div[2]/div[2]/div/div/div/div/ul')
         child_element = parent_element.find_elements_by_tag_name('li')
         item_text = child_element[0].text
-        # import ipdb; ipdb.set_trace()
         text_inside_item = item_text.split('\n')
         assert len(text_inside_item) == 4
         uan = 'грн'
         assert uan in text_inside_item[1]
-
-
-
-
