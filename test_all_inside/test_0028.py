@@ -38,6 +38,6 @@ class TestID0028(Base):
         children_ids = html_list.find_elements_by_tag_name("li")
         only_price = [i for i in children_ids if 'грн' in i.text]
         result = (True if len(only_price) > 0 else False)
-        assert result == True
         result2 = [True for i in only_price if len(i.text) > 5]
+        assert result == True
         assert all(result2) == True
