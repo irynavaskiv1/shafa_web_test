@@ -1,3 +1,6 @@
+import random
+from time import sleep
+
 import pytest
 
 from sf_setup_helper.base_pytest import Base
@@ -24,6 +27,17 @@ class TestID0028(Base):
     def test_item_inside_block_first(self):
         self.discount_day().click()
         self.women_clothes().click()
-        import ipdb; ipdb.set_trace()
-        self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/p/span/select')
+        min_value = random.randint(100, 200)
+        max_value = random.randint(200, 300)
+        self.selenium.find_element_by_name('costFrom').send_keys(min_value)
+        sleep(5)
+        self.selenium.find_element_by_name('costTo').send_keys(max_value)
+        sleep(5)
+        html_list = self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/div/div/div/ul')
+        children_ids = html_list.find_elements_by_tag_name("li")
+        only_price = [i for i in children_ids if 'грн' in i.text]
+        result = (True if len(only_price) > 0 else False)
+        assert result == True
+        result2 = [True for i in only_price if len(i.text) > 5]
+        assert all(result2) == True
