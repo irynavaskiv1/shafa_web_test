@@ -47,3 +47,15 @@ class TestID0028(Base):
         assert result == True
         assert all(result2) == True
 
+    def test_items_inside_events(self):
+        self.login_discount_day_with_price_values()
+        html_list = self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/div/div/div/ul').text
+        list_elements = html_list.split('\n')
+        reserved = [i for i in list_elements if i == 'РЕЗЕРВ']
+        is_reserved_elements_exist = True if len(reserved) > 0 else False
+        new = [i for i in list_elements if i == 'NEW']
+        is_new_elements_exist = True if len(new) > 0 else False
+        import ipdb; ipdb.set_trace()
+        assert is_reserved_elements_exist == True
+        assert is_new_elements_exist == True
