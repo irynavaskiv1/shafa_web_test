@@ -19,12 +19,14 @@ class TestID0028(Base):
             1. Click in 'Discount' button
             2. Click select listbox element
             3. Made iteration inside block (check all items)
-            4. Check if price is correct
+            4.2.1 Check if elements have reserved items
+            4.2.2 Check if elements have new items
         Expected result:
-            1. Price should be correct
+            2.1. Reserved item should be in html list
+            2.2 New item should be in html list
     """
 
-    def test_item_inside_block_first(self):
+    def login_discount_day_with_price_values(self):
         self.discount_day().click()
         self.women_clothes().click()
         min_value = random.randint(100, 200)
@@ -33,6 +35,9 @@ class TestID0028(Base):
         sleep(5)
         self.selenium.find_element_by_name('costTo').send_keys(max_value)
         sleep(5)
+
+    def test_item_inside_block_first(self):
+        self.login_discount_day_with_price_values()
         html_list = self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[2]/div/div/div/div/ul')
         children_ids = html_list.find_elements_by_tag_name("li")
@@ -41,3 +46,16 @@ class TestID0028(Base):
         result2 = [True for i in only_price if len(i.text) > 5]
         assert result == True
         assert all(result2) == True
+
+    def test_items_inside_events(self):
+        self.login_discount_day_with_price_values()
+        html_list = self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/div/div/div/ul').text
+        list_elements = html_list.split('\n')
+        reserved = [i for i in list_elements if i == 'РЕЗЕРВ']
+        is_reserved_elements_exist = True if len(reserved) > 0 else False
+        new = [i for i in list_elements if i == 'NEW']
+        is_new_elements_exist = True if len(new) > 0 else False
+        import ipdb; ipdb.set_trace()
+        assert is_reserved_elements_exist == True
+        assert is_new_elements_exist == True
