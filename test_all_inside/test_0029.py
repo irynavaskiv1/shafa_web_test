@@ -19,13 +19,17 @@ class TestID0029(Base):
             1. Children ids should have all correct items
     """
 
+    def iteration_by_items(self, html_list):
+        self.children_ids = html_list.find_elements_by_tag_name("li")
+        self.only_price = [i for i in self.children_ids if 'грн' in i.text]
+        result = True if len(self.only_price) > 0 else False
+        return result
+
     def test_items_inside_mail_block(self):
         """ for vip-revelation"""
         html_list = self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[4]/div/ul[1]')
-        children_ids = html_list.find_elements_by_tag_name("li")
-        only_price = [i for i in children_ids if 'грн' in i.text]
-        result = (True if len(only_price) > 0 else False)
-        result2 = [True for i in only_price if len(i.text) > 5]
+        result = self.iteration_by_items(html_list)
+        result2 = [True for i in self.only_price if len(i.text) > 5]
         assert result == True
         assert all(result2) == True
