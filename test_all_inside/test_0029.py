@@ -35,7 +35,7 @@ class TestID0029(Base):
         assert all(result2) == True
 
     def test_items2_inside_mail_block(self):
-        """ for vip-mens"""
+        """ for vip-men"""
         html_list = self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[4]/div/ul[2]')
         result = self.iteration_by_items(html_list)
@@ -47,6 +47,15 @@ class TestID0029(Base):
         """ for vip-children"""
         html_list = self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[4]/div/ul[3]')
+        result = self.iteration_by_items(html_list)
+        result2 = [True for i in self.only_price if len(i.text) > 5]
+        assert result == True
+        assert all(result2) == True
+
+    def test_items4_inside_mail_block(self):
+        """ popular goods"""
+        html_list = self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[5]/div')
         result = self.iteration_by_items(html_list)
         result2 = [True for i in self.only_price if len(i.text) > 5]
         assert result == True
