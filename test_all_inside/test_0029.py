@@ -6,7 +6,7 @@ from sf_setup_helper.base_pytest import Base
 @pytest.mark.webtest
 class TestID0029(Base):
     """
-        @TestCase: 0029 (1)
+        @TestCase: 0029 (1, 2, 3, 4)
         @Author: Iryna Vaskiv
         Description:
             1. Check if items inside main block have all fields.
