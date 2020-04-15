@@ -1,10 +1,11 @@
 import pytest
 
 from sf_setup_helper.base_pytest import Base
+from sf_setup_helper.base_helper import BaseHelper
 
 
 @pytest.mark.webtest
-class TestID0029(Base):
+class TestID0029(Base, BaseHelper):
     """
         @TestCase: 0029 (1, 2, 3, 4)
         @Author: Iryna Vaskiv
@@ -18,12 +19,6 @@ class TestID0029(Base):
         Expected result:
             1. Children ids should have all correct items
     """
-
-    def iteration_by_items(self, html_list):
-        self.children_ids = html_list.find_elements_by_tag_name("li")
-        self.only_price = [i for i in self.children_ids if 'грн' in i.text]
-        result = True if len(self.only_price) > 0 else False
-        return result
 
     def test_items_inside_mail_block(self):
         """ for vip-revelation"""
