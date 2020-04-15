@@ -32,5 +32,17 @@ class BaseHelper:
         search_input.send_keys(u'\ue007')
         sleep(5)
 
+    def iteration_by_items(self, html_list):
+        """
+        This function made iteration by objects inside block.
+        This function used in test_0029 .
+        :param html_list: (list object)
+        :return: result bool True/False (if True - len > 0 , else False)
+        """
+        self.children_ids = html_list.find_elements_by_tag_name("li")
+        self.only_price = [i for i in self.children_ids if 'грн' in i.text]
+        result = True if len(self.only_price) > 0 else False
+        return result
+
     def teardown(self):
         self.selenium.close()
