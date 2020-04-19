@@ -1,3 +1,5 @@
+from selenium.webdriver.common.keys import Keys
+
 import pytest
 
 from sf_setup_helper.base_pytest import Base
@@ -20,6 +22,9 @@ class TestID0030(Base, BaseHelper):
             1. New tab should print correct information.
     """
 
-    # def test_if_possible_open_new_tab(self):
-        
-
+    def test_if_possible_open_new_tab(self):
+        show_all = self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[5]/div/div/div/a')
+        import ipdb; ipdb.set_trace()
+        show_all.send_keys(Keys.TAB)
+        show_all.click()
