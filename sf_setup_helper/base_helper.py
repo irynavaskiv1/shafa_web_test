@@ -22,6 +22,11 @@ class BaseHelper:
             '/html/body/div/div[2]/div[2]/div/div/div[2]/div/ul[1]')
 
     def search_function(self):
+        """
+        This function find search block in main page and input random value in
+        search block.
+        :return: None, just do some prepare actions.
+        """
         search_input = self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/'
             'div[1]/nav/div/form/input')
