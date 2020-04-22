@@ -1,11 +1,21 @@
-import pytest
 from selenium import webdriver
+from settings import HIDE_FIREFOX
+from pyvirtualdisplay import Display
+
+import pytest
 
 
 class Base:
 
+    @classmethod
+    def setUpClass(cls):
+        cls.selenium = webdriver.Firefox()
+        if HIDE_FIREFOX:
+            cls.display = Display(visible=0, size=(1400, 1000))
+            cls.display.start()
+
     @pytest.fixture(autouse=True)
-    def setup(self):
+    def setUp(self):
         self.selenium = webdriver.Firefox()
         self.selenium.get('{}'.format('https://shafa.ua/'))
 
@@ -187,5 +197,41 @@ class Base:
             '/html/body/div/div[2]/div[2]/div/aside/'
             'div/div[2]/div[3]/div/div[2]/div/ul/li[5]/label')
 
-    def teardown(self):
+    def tearDown(self):
         self.selenium.close()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.selenium = webdriver.Firefox()
+        cls.selenium.close()
+        if HIDE_FIREFOX:
+            cls.display = Display(visible=0, size=(1400, 1000))
+            cls.display.stop()
+
+
+class BaseSeleniumToPCTestCase(Base):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.width = 1366
+        cls.height = 768
+        super(BaseSeleniumToPCTestCase, cls).setUp()
+
+
+class BaseSeleniumToAndroidTestCase(Base):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.width = 480
+        cls.height = 800
+        super(BaseSeleniumToAndroidTestCase, cls).setUp()
+
+
+class BaseSeleniumToIOSTestCase(Base):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.width = 380
+        cls.height = 700
+        super(BaseSeleniumToIOSTestCase, cls).setUp()
+
