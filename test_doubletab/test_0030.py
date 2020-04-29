@@ -13,11 +13,14 @@ class TestID0030:
         @Author: Iryna Vaskiv
         Description:
             1. Check if new tab open when user click with "open in new tab".
+               Also should check if inside second tab all elements are correct.
         Pre-condition: Login inside web interface.
         Steps to reproduce:
             1. Click shafa.ua site
-            2. Select block items inside main page
-            3. Click "open"
+            2. Select block item
+            3. Click "open in new tab"
+            4. Select second tab
+            5. Check if all items inside second tab are correct
         Expected result:
             1. New tab should print correct information.
     """
