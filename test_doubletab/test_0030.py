@@ -30,30 +30,21 @@ class TestID0030:
         browser.get('{}'.format('https://shafa.ua/'))
         first_result = ui.WebDriverWait(browser, 15).until(
             lambda browser: browser.find_element_by_class_name('b-nav__link'))
-        first_link = first_result.find_element_by_xpath(
+        is_exist_elem_first_tab\
+            = browser.find_element_by_class_name('b-nav__link')
+        assert bool(is_exist_elem_first_tab) == True
+        second_tab = first_result.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[7]/a')
-
-        # Save the window opener
-        # (current window, do not mistaken with tab... not the same)
-        main_window = browser.current_window_handle
-
         # Open the link in a new tab by sending key strokes on the element
         # Use: Keys.CONTROL + Keys.SHIFT + Keys.RETURN
         # to open tab on top of the stack
-        first_link.send_keys(Keys.CONTROL + Keys.RETURN)
-
+        second_tab.send_keys(Keys.CONTROL + Keys.RETURN)
         # Switch tab to the new tab, which we will assume
         # is the next one on the right
-        browser.find_element_by_tag_name('body').send_keys(
-            Keys.CONTROL + Keys.TAB)
-
-        # Put focus on current window which will, in fact,
-        # put focus on the current visible tab
-        browser.switch_to_window(main_window)
-        sleep(2)
-
-        # Close current tab
-        browser.find_element_by_tag_name('body').send_keys(Keys.CONTROL + 'w')
-
-        # Put focus on current window which will be the window opener
-        browser.switch_to_window(main_window)
+        browser.switch_to.window(browser.window_handles[-1])
+        sleep(5)
+        import ipdb; ipdb.set_trace()
+        is_exist_elem_second_tab \
+            = browser.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/div/div/div/h1')
+        assert bool(is_exist_elem_second_tab) == True
