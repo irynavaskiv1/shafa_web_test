@@ -32,7 +32,7 @@ class TestID0030:
             lambda browser: browser.find_element_by_class_name('b-nav__link'))
         is_exist_elem_first_tab\
             = browser.find_element_by_class_name('b-nav__link')
-        assert bool(is_exist_elem_first_tab) == True
+        assert bool(is_exist_elem_first_tab) is True
         second_tab = first_result.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[7]/a')
         # Open the link in a new tab by sending key strokes on the element
@@ -47,4 +47,4 @@ class TestID0030:
         is_exist_elem_second_tab \
             = browser.find_element_by_xpath(
             '/html/body/div/div[2]/div[2]/div/div/div/div/h1')
-        assert bool(is_exist_elem_second_tab) == True
+        assert bool(is_exist_elem_second_tab) is True
