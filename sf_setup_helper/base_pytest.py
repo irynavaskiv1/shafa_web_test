@@ -32,6 +32,15 @@ class Base:
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/a')
 
+    # items inside search block
+    def search_block(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/form/input')
+
+    def block_all_items_inside(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/div/div[2]/div/ul[1]')
+
     # section container for 'Женщинам' button
     def for_women_button(self):
         return self.selenium.find_element_by_xpath(
@@ -234,4 +243,3 @@ class BaseSeleniumToIOSTestCase(Base):
         cls.width = 380
         cls.height = 700
         super(BaseSeleniumToIOSTestCase, cls).setUp()
-
