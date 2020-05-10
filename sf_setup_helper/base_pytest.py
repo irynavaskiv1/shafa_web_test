@@ -7,12 +7,12 @@ import pytest
 
 class Base:
 
-    @classmethod
-    def setUpClass(cls):
-        cls.selenium = webdriver.Firefox()
-        if HIDE_FIREFOX:
-            cls.display = Display(visible=0, size=(1400, 1000))
-            cls.display.start()
+    # @classmethod
+    # def setUpClass(cls):
+    #     cls.selenium = webdriver.Firefox()
+    #     if HIDE_FIREFOX:
+    #         cls.display = Display(visible=0, size=(1400, 1000))
+    #         cls.display.start()
 
     @pytest.fixture(autouse=True)
     def setUp(self):
@@ -200,13 +200,13 @@ class Base:
     def tearDown(self):
         self.selenium.close()
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.selenium = webdriver.Firefox()
-        cls.selenium.close()
-        if HIDE_FIREFOX:
-            cls.display = Display(visible=0, size=(1400, 1000))
-            cls.display.stop()
+    # @classmethod
+    # def tearDownClass(cls):
+    #     cls.selenium = webdriver.Firefox()
+    #     cls.selenium.close()
+    #     if HIDE_FIREFOX:
+    #         cls.display = Display(visible=0, size=(1400, 1000))
+    #         cls.display.stop()
 
 
 class BaseSeleniumToPCTestCase(Base):
