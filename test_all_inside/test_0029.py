@@ -26,8 +26,8 @@ class TestID0029(Base, BaseHelper):
             '/html/body/div/div[2]/div[4]/div/ul[1]')
         result = self.iteration_by_items(html_list)
         result2 = [True for i in self.only_price if len(i.text) > 5]
-        assert result == True
-        assert all(result2) == True
+        assert result is True
+        assert all(result2) is True
 
     def test_items2_inside_mail_block(self):
         """ for vip-men"""
@@ -35,8 +35,8 @@ class TestID0029(Base, BaseHelper):
             '/html/body/div/div[2]/div[4]/div/ul[2]')
         result = self.iteration_by_items(html_list)
         result2 = [True for i in self.only_price if len(i.text) > 5]
-        assert result == True
-        assert all(result2) == True
+        assert result is True
+        assert all(result2) is True
 
     def test_items3_inside_mail_block(self):
         """ for vip-children"""
@@ -44,8 +44,8 @@ class TestID0029(Base, BaseHelper):
             '/html/body/div/div[2]/div[4]/div/ul[3]')
         result = self.iteration_by_items(html_list)
         result2 = [True for i in self.only_price if len(i.text) > 5]
-        assert result == True
-        assert all(result2) == True
+        assert result is True
+        assert all(result2) is True
 
     def test_items4_inside_mail_block(self):
         """ popular goods"""
@@ -53,5 +53,5 @@ class TestID0029(Base, BaseHelper):
             '/html/body/div/div[2]/div[5]/div')
         result = self.iteration_by_items(html_list)
         result2 = [True for i in self.only_price if len(i.text) > 5]
-        assert result == True
-        assert all(result2) == True
+        assert result is True
+        assert all(result2) is True

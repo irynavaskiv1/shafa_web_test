@@ -9,10 +9,11 @@ from sf_setup_helper.base_pytest import Base
 @pytest.mark.webtest
 class TestID0023(Base):
     """
-        @TestCase: 0023
+        @TestCase: 0023(1, 2)
         @Author: Iryna Vaskiv
         Description:
             1. Check if search is visible
+            1. Check if search block have all values
         Pre-condition: Login inside web/mobile interface.
         Steps to reproduce:
             1. Click in 'Search' button

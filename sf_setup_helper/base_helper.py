@@ -2,24 +2,11 @@ import random
 from time import sleep
 from selenium import webdriver
 
-import pytest
-
 
 class BaseHelper:
 
-    @pytest.fixture(autouse=True)
-    def setup(self):
-        self.selenium = webdriver.Firefox()
-        self.selenium.get('{}'.format('https://shafa.ua/'))
-
-    # items inside search block
-    def search_block(self):
-        return self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/form/input')
-
-    def block_all_items_inside(self):
-        return self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div[2]/div/ul[1]')
+    selenium = webdriver.Firefox()
+    selenium.get('{}'.format('https://shafa.ua/'))
 
     def search_function(self):
         """
@@ -49,5 +36,22 @@ class BaseHelper:
         result = True if len(self.only_price) > 0 else False
         return result
 
-    def teardown(self):
-        self.selenium.close()
+    def login_discount_day_with_price_values(self):
+        """
+        This function made set values in two blocks.
+        This function used in test_0028 .
+        :param int
+        :return: None
+        """
+        self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[1]/div/div[1]'
+            '/nav/div/ul/li[7]/a').click()
+        self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/aside/div/div[2]'
+            '/div[2]/div/div/div/div[1]/div[1]/a').click()
+        min_value = random.randint(100, 200)
+        max_value = random.randint(200, 300)
+        self.selenium.find_element_by_name('costFrom').send_keys(min_value)
+        sleep(5)
+        self.selenium.find_element_by_name('costTo').send_keys(max_value)
+        sleep(5)

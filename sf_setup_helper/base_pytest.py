@@ -7,12 +7,12 @@ import pytest
 
 class Base:
 
-    @classmethod
-    def setUpClass(cls):
-        cls.selenium = webdriver.Firefox()
-        if HIDE_FIREFOX:
-            cls.display = Display(visible=0, size=(1400, 1000))
-            cls.display.start()
+    # @classmethod
+    # def setUpClass(cls):
+    #     cls.selenium = webdriver.Firefox()
+    #     if HIDE_FIREFOX:
+    #         cls.display = Display(visible=0, size=(1400, 1000))
+    #         cls.display.start()
 
     @pytest.fixture(autouse=True)
     def setUp(self):
@@ -31,6 +31,15 @@ class Base:
     def add_ware(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/a')
+
+    # items inside search block
+    def search_block(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/form/input')
+
+    def block_all_items_inside(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/div/div[2]/div/ul[1]')
 
     # section container for 'Женщинам' button
     def for_women_button(self):
@@ -200,13 +209,13 @@ class Base:
     def tearDown(self):
         self.selenium.close()
 
-    @classmethod
-    def tearDownClass(cls):
-        cls.selenium = webdriver.Firefox()
-        cls.selenium.close()
-        if HIDE_FIREFOX:
-            cls.display = Display(visible=0, size=(1400, 1000))
-            cls.display.stop()
+    # @classmethod
+    # def tearDownClass(cls):
+    #     cls.selenium = webdriver.Firefox()
+    #     cls.selenium.close()
+    #     if HIDE_FIREFOX:
+    #         cls.display = Display(visible=0, size=(1400, 1000))
+    #         cls.display.stop()
 
 
 class BaseSeleniumToPCTestCase(Base):
@@ -234,4 +243,3 @@ class BaseSeleniumToIOSTestCase(Base):
         cls.width = 380
         cls.height = 700
         super(BaseSeleniumToIOSTestCase, cls).setUp()
-

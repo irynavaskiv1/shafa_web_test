@@ -6,7 +6,7 @@ from sf_setup_helper.base_pytest import Base
 @pytest.mark.webtest
 class TestID0026(Base):
     """
-        @TestCase: 0026
+        @TestCase: 0026 (1, 2, 3)
         @Author: Iryna Vaskiv
         Description:
             1. Check if inside discount block all elements have umber
