@@ -1,13 +1,11 @@
-import random
-from time import sleep
-
 import pytest
 
 from sf_setup_helper.base_pytest import Base
+from sf_setup_helper.base_helper import BaseHelper
 
 
 @pytest.mark.webtest
-class TestID0028(Base):
+class TestID0028(Base, BaseHelper):
     """
         @TestCase: 0028 (1, 2)
         @Author: Iryna Vaskiv
@@ -25,16 +23,6 @@ class TestID0028(Base):
             2.1. Reserved item should be in html list
             2.2 New item should be in html list
     """
-
-    def login_discount_day_with_price_values(self):
-        self.discount_day().click()
-        self.women_clothes().click()
-        min_value = random.randint(100, 200)
-        max_value = random.randint(200, 300)
-        self.selenium.find_element_by_name('costFrom').send_keys(min_value)
-        sleep(5)
-        self.selenium.find_element_by_name('costTo').send_keys(max_value)
-        sleep(5)
 
     def test_item_inside_block_first(self):
         self.login_discount_day_with_price_values()
@@ -56,6 +44,5 @@ class TestID0028(Base):
         is_reserved_elements_exist = True if len(reserved) > 0 else False
         new = [i for i in list_elements if i == 'NEW']
         is_new_elements_exist = True if len(new) > 0 else False
-        import ipdb; ipdb.set_trace()
         assert is_reserved_elements_exist is True
         assert is_new_elements_exist is True
