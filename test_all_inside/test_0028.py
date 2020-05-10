@@ -9,7 +9,7 @@ from sf_setup_helper.base_pytest import Base
 @pytest.mark.webtest
 class TestID0028(Base):
     """
-        @TestCase: 0028 (1)
+        @TestCase: 0028 (1, 2)
         @Author: Iryna Vaskiv
         Description:
             1. Check if items inside block have whether the price changes
@@ -44,8 +44,8 @@ class TestID0028(Base):
         only_price = [i for i in children_ids if 'грн' in i.text]
         result = (True if len(only_price) > 0 else False)
         result2 = [True for i in only_price if len(i.text) > 5]
-        assert result == True
-        assert all(result2) == True
+        assert result is True
+        assert all(result2) is True
 
     def test_items_inside_events(self):
         self.login_discount_day_with_price_values()
@@ -57,5 +57,5 @@ class TestID0028(Base):
         new = [i for i in list_elements if i == 'NEW']
         is_new_elements_exist = True if len(new) > 0 else False
         import ipdb; ipdb.set_trace()
-        assert is_reserved_elements_exist == True
-        assert is_new_elements_exist == True
+        assert is_reserved_elements_exist is True
+        assert is_new_elements_exist is True

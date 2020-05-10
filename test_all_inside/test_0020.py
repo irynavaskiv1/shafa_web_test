@@ -1,6 +1,6 @@
-import pytest
-
 from sf_setup_helper.base_pytest import Base
+
+import pytest
 
 
 @pytest.mark.webtest

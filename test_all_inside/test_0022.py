@@ -1,7 +1,8 @@
-import random
 import re
-import pytest
+import random
 from time import sleep
+
+import pytest
 
 from sf_setup_helper.base_pytest import Base
 
