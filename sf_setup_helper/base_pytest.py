@@ -216,30 +216,3 @@ class Base:
     #     if HIDE_FIREFOX:
     #         cls.display = Display(visible=0, size=(1400, 1000))
     #         cls.display.stop()
-
-
-class BaseSeleniumToPCTestCase(Base):
-
-    @classmethod
-    def setUpClass(cls):
-        cls.width = 1366
-        cls.height = 768
-        super(BaseSeleniumToPCTestCase, cls).setUp()
-
-
-class BaseSeleniumToAndroidTestCase(Base):
-
-    @classmethod
-    def setUpClass(cls):
-        cls.width = 480
-        cls.height = 800
-        super(BaseSeleniumToAndroidTestCase, cls).setUp()
-
-
-class BaseSeleniumToIOSTestCase(Base):
-
-    @classmethod
-    def setUpClass(cls):
-        cls.width = 380
-        cls.height = 700
-        super(BaseSeleniumToIOSTestCase, cls).setUp()
