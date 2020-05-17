@@ -23,9 +23,7 @@ class TestID005(Base):
         """
     @pytest.mark.skip()
     def test_add_new_ware(self):
-        login_button = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[1]/div/div[1]/header/div[2]/div/a[1]')
-        login_button.click()
+        self.login_button().click()
         sleep(5)
         login_field = self.selenium.find_element_by_xpath(
             '/html/body/div[1]/div/div/div/div/div/div[2]/form/div[1]/input')

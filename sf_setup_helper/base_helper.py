@@ -6,7 +6,6 @@ from selenium import webdriver
 class BaseHelper:
 
     selenium = webdriver.Firefox()
-    selenium.get('{}'.format('https://shafa.ua/'))
 
     def search_function(self):
         """

@@ -42,7 +42,7 @@ class Base:
             '/html/body/div/div[2]/div[2]/div/div/div[2]/div/ul[1]')
 
     # section container for 'Женщинам' button
-    def for_women_button(self):
+    def for_women(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[1]/a')
 
@@ -206,7 +206,7 @@ class Base:
             '/html/body/div/div[2]/div[2]/div/aside/'
             'div/div[2]/div[3]/div/div[2]/div/ul/li[5]/label')
 
-    def tearDown(self):
+    def teardown(self):
         self.selenium.close()
 
     # @classmethod

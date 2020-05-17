@@ -17,9 +17,7 @@ class TestID001(Base):
     """
 
     def test_mobile_menu_all_elements(self):
-        login_button = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[1]/div/div[1]/header/div[2]/div/a[1]')
-        login_button.click()
+        self.login_button().click()
         page_elements = self.selenium.find_elements_by_xpath(
             '/html/body/div[1]/div/div/div/div/div/div[2]')
         if len(page_elements) == 0:

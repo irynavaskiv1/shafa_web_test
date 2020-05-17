@@ -17,9 +17,7 @@ class TestID003(Base):
     """
 
     def test_navigation_list_all_elements(self):
-        self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[1]/a')\
-            .click()
+        self.for_women().click()
         all_list = self.selenium.find_elements_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[1]/div/'
             'div[1]')
