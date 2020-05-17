@@ -1,7 +1,8 @@
 from time import sleep
-from sf_setup_helper.base_pytest import Base
 
 import pytest
+
+from sf_setup_helper.base_pytest import Base
 
 
 @pytest.mark.webtest
