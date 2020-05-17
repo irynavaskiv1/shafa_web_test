@@ -43,7 +43,6 @@ class TestID0030:
         # is the next one on the right
         browser.switch_to.window(browser.window_handles[-1])
         sleep(5)
-        is_exist_elem_second_tab \
-            = browser.find_element_by_xpath(
+        is_exist_elem_second_tab = browser.find_element_by_xpath(
             '/html/body/div/div[2]/div[2]/div/div/div/div/h1')
         assert bool(is_exist_elem_second_tab) is True

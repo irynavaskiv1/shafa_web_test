@@ -31,7 +31,7 @@ class TestID0027(Base):
         is_children_ids_exist = [i.text for i in children_ids]
         assert len(is_children_ids_exist) > 0
         result_each_item = [True for i in is_children_ids_exist if len(i) > 0]
-        assert all(result_each_item) == True
+        assert all(result_each_item) is True
 
     def test_item_inside_block_second(self):
         self.discount_day().click()
@@ -41,4 +41,4 @@ class TestID0027(Base):
         children_ids = html_list.find_elements_by_tag_name("li")
         is_uan_exist_in_each_item = \
             [True for i in children_ids if 'грн' in i.text]
-        assert all(is_uan_exist_in_each_item) == True
+        assert all(is_uan_exist_in_each_item) is True
