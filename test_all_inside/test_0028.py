@@ -26,8 +26,7 @@ class TestID0028(Base, BaseHelper):
 
     def test_item_inside_block_first(self):
         self.login_discount_day_with_price_values()
-        html_list = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/ul')
+        html_list = self.html_list()
         children_ids = html_list.find_elements_by_tag_name("li")
         only_price = [i for i in children_ids if 'грн' in i.text]
         result = (True if len(only_price) > 0 else False)
@@ -37,8 +36,7 @@ class TestID0028(Base, BaseHelper):
 
     def test_items_inside_events(self):
         self.login_discount_day_with_price_values()
-        html_list = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/ul').text
+        html_list = self.html_list().text()
         list_elements = html_list.split('\n')
         reserved = [i for i in list_elements if i == 'РЕЗЕРВ']
         is_reserved_elements_exist = True if len(reserved) > 0 else False

@@ -26,9 +26,7 @@ class TestID0023(Base):
     """
 
     def test_search_func(self):
-        search_input = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[1]/div/'
-            'div[1]/nav/div/form/input')
+        search_input = self.search_input()
         search_input.click()
         random_value = random.choice(
             ['Піджак', 'Жакет', 'Спідниця', 'Штани', 'Шорти'])
@@ -42,9 +40,7 @@ class TestID0023(Base):
         assert random_value == input_value_second
 
     def test_search_block_item(self):
-        search_input = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[1]/div/'
-            'div[1]/nav/div/form/input')
+        search_input = self.search_input()
         search_input.click()
         random_value = random.choice(
             ['Піджак', 'Жакет', 'Спідниця', 'Штани', 'Шорти'])

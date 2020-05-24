@@ -24,6 +24,5 @@ class TestID0013(Base):
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/'
             'li[2]/a').click()
         sleep(5)
-        new_header = self.selenium.find_elements_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/div[2]/h1')
-        assert len(new_header) == 1
+        all_novelty_header = self.all_novelty_header()
+        assert len(all_novelty_header) == 1

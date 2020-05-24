@@ -26,8 +26,7 @@ class TestID0018(Base):
     def test_is_novelty_header_exist(self):
         self.novelty().click()
         sleep(5)
-        all_novelty_header = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/div[2]/h1')
+        all_novelty_header = self.all_novelty_header()
         set_get_novelty_header = set(all_novelty_header.text.split('\n'))
         set_words = {'Новинки: женская одежда'}
         assert set_words == set_get_novelty_header

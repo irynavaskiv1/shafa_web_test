@@ -17,8 +17,7 @@ class TestID002(Base):
     """
 
     def test_navigation_list_all_elements(self):
-        navigation_list_elements = self.selenium.find_elements_by_xpath(
-            '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul')
+        navigation_list_elements = self.navigation_list_elements()
         child_elements = navigation_list_elements[0].\
             find_elements_by_class_name('b-nav__link')
         if len(child_elements) != 6:

@@ -28,9 +28,18 @@ class Base:
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/header/div[2]/div/a[2]')
 
+    def search_input(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[1]/div/'
+            'div[1]/nav/div/form/input')
+
     def add_ware(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/a')
+
+    def navigation_list_elements(self):
+        return self.selenium.find_elements_by_xpath(
+            '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul')
 
     # items inside search block
     def search_block(self):
@@ -71,10 +80,19 @@ class Base:
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[2]/a')
 
+    def all_novelty_header(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/div/div/div/div[2]/h1')
+
     def sorting_block(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div[1]/div[2]/div[2]/div/div/div/div/'
             'div[4]/div[2]/span/select')
+
+    def size_block(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div[1]/div[2]/div[2]/div/div/div'
+            '/div/div[4]/div[2]/span')
 
     # section container for 'Детям' button
     def for_kids(self):
@@ -131,6 +149,15 @@ class Base:
             '/html/body/div[1]/div[2]/div[1]/div/div[1]/nav/div/ul/li[5]'
             '/div/div[2]/div[1]/ul/li[1]/a')
 
+    def all_item_inside_for_home(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div[1]/div[2]/div[2]/div/aside/div[1]/div')
+
+    def all_city_words(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div[1]/div[2]/div[2]/div/aside/div[2]'
+            '/div[2]/div/div[1]')
+
     def all_utensils(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[1]/div/div[1]/nav/div/ul/li[5]'
@@ -159,6 +186,10 @@ class Base:
     def combobox_items_block(self):
         return self.selenium.find_element_by_xpath(
             '/html/body/div/div[2]/div[2]/div/div/div/div/p/span/select')
+
+    def html_list(self):
+        return self.selenium.find_element_by_xpath(
+            '/html/body/div/div[2]/div[2]/div/div/div/div/ul')
 
     # section container for 'Рубрика' button
     def women_clothes(self):

@@ -35,20 +35,16 @@ class TestID0019(Base):
 
     def test_if_sorting_block_exist(self):
         self.novelty().click()
-        size_block = self.selenium.find_element_by_xpath(
-            '/html/body/div[1]/div[2]/div[2]/div/div/div'
-            '/div/div[4]/div[2]/span')
-        set_get_size_block_words = set(size_block.text.split('\n'))
+        self.size_block().click()
+        set_get_size_block_words = set(self.size_block.text.split('\n'))
         set_words = {'по дате добавления', 'по популярности',
                      'от дорогих к дешевым', 'от дешевых к дорогим'}
         assert set_words == set_get_size_block_words
 
     def test_if_sorting_block_have_all_elements(self):
         self.novelty().click()
-        size_block = self.selenium.find_element_by_xpath(
-            '/html/body/div[1]/div[2]/div[2]/div/div/div'
-            '/div/div[4]/div[2]/span')
-        set_get_size_block_words = set(size_block.text.split('\n'))
+        self.size_block().click()
+        set_get_size_block_words = set(self.size_block.text.split('\n'))
         set_words = {'по дате добавления', 'по популярности',
                      'от дорогих к дешевым', 'от дешевых к дорогим'}
         assert len(set_words) == len(set_get_size_block_words)
