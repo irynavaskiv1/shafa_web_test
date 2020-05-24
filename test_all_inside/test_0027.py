@@ -25,8 +25,7 @@ class TestID0027(Base):
     def test_item_inside_block_first(self):
         self.discount_day().click()
         self.women_clothes().click()
-        html_list = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/ul')
+        html_list = self.html_list()
         children_ids = html_list.find_elements_by_tag_name("li")
         is_children_ids_exist = [i.text for i in children_ids]
         assert len(is_children_ids_exist) > 0
@@ -36,8 +35,7 @@ class TestID0027(Base):
     def test_item_inside_block_second(self):
         self.discount_day().click()
         self.women_clothes().click()
-        html_list = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/ul')
+        html_list = self.html_list()
         children_ids = html_list.find_elements_by_tag_name("li")
         is_uan_exist_in_each_item = \
             [True for i in children_ids if 'грн' in i.text]

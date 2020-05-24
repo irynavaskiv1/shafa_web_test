@@ -30,8 +30,7 @@ class TestID0020(Base):
     def test_if_first_main_inner_exist(self):
         self.for_home().click()
         self.all_home_textiles().click()
-        all_item = self.selenium.find_element_by_xpath(
-            '/html/body/div[1]/div[2]/div[2]/div/aside/div[1]/ul')
+        all_item = self.all_item_inside_for_home()
         set_all_words = set(all_item.text.split('\n'))
         set_all_text = {'Shafa.ua', 'Для дома', 'Домашний текстиль'}
         assert set_all_words == set_all_text
@@ -39,8 +38,7 @@ class TestID0020(Base):
     def test_if_second_main_inner_exist(self):
         self.for_home().click()
         self.all_home_textiles().click()
-        all_item = self.selenium.find_element_by_xpath(
-            '/html/body/div[1]/div[2]/div[2]/div/aside/div[1]/div')
+        all_item = self.all_item_inside_for_home()
         set_all_words = set(all_item.text.split('\n'))
         set_all_text = {'Посуда', 'Хранение вещей', 'Декор'}
         assert set_all_words == set_all_text
@@ -48,9 +46,7 @@ class TestID0020(Base):
     def test_if_gradation_of_price_exist(self):
         self.for_home().click()
         self.all_home_textiles().click()
-        all_city_words = self.selenium.find_element_by_xpath(
-            '/html/body/div[1]/div[2]/div[2]/div/aside/div[2]'
-            '/div[2]/div/div[1]')
+        all_city_words = self.all_city_words()
         set_all_words = set(all_city_words.text.split('\n'))
         set_all_text = {'От 300 до 500 грн', 'Более 1000 грн', 'До 100 грн',
                         'От 100 до 300 грн', 'От', 'Цена',  'До',

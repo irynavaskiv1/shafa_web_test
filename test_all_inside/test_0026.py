@@ -32,16 +32,14 @@ class TestID0026(Base):
 
     def test_len_items_inside_main_block(self):
         self.discount_day().click()
-        parent_element = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/ul')
-        child_element = parent_element.find_elements_by_tag_name('li')
+        html_list = self.html_list()
+        child_element = html_list.find_elements_by_tag_name('li')
         assert len(child_element) > 10
 
     def test_item_inside_main_block(self):
         self.discount_day().click()
-        parent_element = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/ul')
-        child_element = parent_element.find_elements_by_tag_name('li')
+        html_list = self.html_list()
+        child_element = html_list.find_elements_by_tag_name('li')
         item_text = child_element[0].text
         text_inside_item = item_text.split('\n')
         assert len(text_inside_item) == 4
