@@ -25,7 +25,7 @@ class TestID0017(Base):
     """
 
     def test_all_cosmetics(self):
-        self.for_women_button().click()
+        self.for_women().click()
         self.all_cosmetics().click()
         sleep(5)
         all_cosmetics_header = self.selenium.find_element_by_xpath(
@@ -35,7 +35,7 @@ class TestID0017(Base):
         assert set_words == set_get_cosmetics_header
 
     def test_all_cosmetics_elements(self):
-        self.for_women_button().click()
+        self.for_women().click()
         self.all_cosmetics().click()
         sleep(5)
         container_cosmetics = self.selenium.find_element_by_xpath(
