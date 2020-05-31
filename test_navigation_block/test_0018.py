@@ -43,20 +43,15 @@ class TestID0018(Base):
 
     def test_if_numbers_in_item_exist(self):
         self.novelty().click()
-        item_all = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/div[3]/ul/li[3]/div')
+        item_all = self.all_novelty_item()
         item_text_number = re.findall('(\d+)', item_all.text)
-        item_part = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/div[3]/ul/li[3]/div/'
-            'div[2]')
+        item_part = self.all_novelty_item_part()
         numbers = re.findall('(\d+)', item_part.text)
         assert int(item_text_number[0]) == int(numbers[0])
 
     def test_if_exist_size_filter(self):
         self.novelty().click()
-        size_block = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/aside/div/'
-            'div/div[2]/div/div[1]/ul')
+        size_block = self.all_novelty_item_part()
         set_get_size_block_words = set(size_block.text.split('\n'))
         set_words = {'Другой', '50/5XL', '54/7XL', '40/L', '46/3XL', '44/XXL',
                      '38/M', '48/4XL', 'One size', '32/XXS', '52/6XL', '42/XL',

@@ -28,8 +28,7 @@ class TestID0015(Base):
         self.for_women().click()
         self.all_woman_close().click()
         sleep(5)
-        all_women_header = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/div[1]/h1')
+        all_women_header = self.all_women_header()
         set_get_women_header = set(all_women_header.text.split('\n'))
         set_words = {'Женская одежда'}
         assert set_words == set_get_women_header
@@ -38,8 +37,7 @@ class TestID0015(Base):
         self.for_women().click()
         self.all_woman_close().click()
         sleep(5)
-        container_elements = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/div[2]')
+        container_elements = self.container_elements()
         child_elements = container_elements. \
             find_elements_by_class_name('b-subcategories__item')
         if len(child_elements) != 21:
