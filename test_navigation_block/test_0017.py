@@ -28,8 +28,7 @@ class TestID0017(Base):
         self.for_women().click()
         self.all_cosmetics().click()
         sleep(5)
-        all_cosmetics_header = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/div[1]/h1')
+        all_cosmetics_header = self.all_women_header()
         set_get_cosmetics_header = set(all_cosmetics_header.text.split('\n'))
         set_words = {'Женская косметика'}
         assert set_words == set_get_cosmetics_header

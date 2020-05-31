@@ -28,8 +28,7 @@ class TestID0016(Base):
         self.for_women().click()
         self.all_accessories().click()
         sleep(5)
-        all_accessories_header = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/div[1]/h1')
+        all_accessories_header = self.all_women_header()
         set_get_accessories_header = \
             set(all_accessories_header.text.split('\n'))
         set_words = {'Женские аксессуары'}
@@ -39,8 +38,7 @@ class TestID0016(Base):
         self.for_women().click()
         self.all_accessories().click()
         sleep(5)
-        container_accessories = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div/div/div[2]')
+        container_accessories = self.container_elements()
         child_elements = container_accessories. \
             find_elements_by_class_name('b-subcategories__item')
         if len(child_elements) != 13:

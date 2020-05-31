@@ -27,8 +27,7 @@ class TestID0014(Base):
         self.for_women().click()
         self.all_brands().click()
         sleep(5)
-        brands_header = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/h1')
+        brands_header = self.brands_header()
         set_get_brands_header = set(brands_header.text.split('\n'))
         set_words = {'Брендовая женская одежда'}
         assert set_words == set_get_brands_header
@@ -37,8 +36,7 @@ class TestID0014(Base):
         self.for_women().click()
         self.all_brands().click()
         sleep(5)
-        container_brands = self.selenium.find_element_by_xpath(
-            '/html/body/div/div[2]/div[2]/div/div/div[2]/div[1]/div')
+        container_brands = self.container_elements()
         child_elements = container_brands. \
             find_elements_by_class_name('b-brands__item_small')
         if len(child_elements) != 16:
