@@ -1,8 +1,6 @@
 {
-  "test_all_inside/test_0020.py::TestID0020::()::test_if_first_main_inner_exist": true,
-  "test_all_inside/test_0020.py::TestID0020::()::test_if_gradation_of_price_exist": true,
-  "test_all_inside/test_0020.py::TestID0020::()::test_if_second_main_inner_exist": true,
-  "test_all_inside/test_0028.py::TestID0028::()::test_price_inside_events": true,
-  "test_doubletab/test_0030.py::TestID0030::()::test_if_possible_open_new_tab": true,
-  "test_main_page.py::test_mobile_menu_all_elements": true
+  "tests/test_001.py": true,
+  "tests/test_0026.py::TestID0026": true,
+  "tests/test_0026.py::TestID0026::()::test_rubric_inside_discount_day_block": true,
+  "tests/test_006.py::TestID006": true
 }
