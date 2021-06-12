@@ -4,7 +4,7 @@ from time import sleep
 
 import pytest
 
-from sf_setup_helper.base_helper import BaseHelper
+from helpers.base_helper import BaseHelper
 
 
 @pytest.mark.webtest

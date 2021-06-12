@@ -1,4 +1,4 @@
-from sf_setup_helper.base_pytest import Base
+from helpers.base_pytest import Base
 
 
 class TestID0010(Base):
