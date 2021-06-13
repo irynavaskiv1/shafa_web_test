@@ -23,4 +23,3 @@ For this should use command pip install -r requirements.txt
                  (path to scope files)
      example:
      pytest -svx D:\work_with_shafa_website\tests\test_006.py
-
