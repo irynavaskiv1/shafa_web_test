@@ -1,7 +1,6 @@
-from time import sleep
-
 import pytest
 
+from time import sleep
 from helpers.base_pytest import Base
 
 
