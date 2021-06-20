@@ -1,7 +1,0 @@
-{
-  "tests/test_0010.py::TestID0010::()::test_if_exist_new_label": true,
-  "tests/test_0026.py::TestID0026::()::test_item_inside_main_block": true,
-  "tests/test_0026.py::TestID0026::()::test_len_items_inside_main_block": true,
-  "tests/test_0026.py::TestID0026::()::test_rubric_inside_discount_day_block": true,
-  "tests/test_0030.py::TestID0030::()::test_if_possible_open_new_tab": true
-}
